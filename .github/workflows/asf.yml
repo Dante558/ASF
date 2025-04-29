@@ -41,10 +41,10 @@ jobs:
         mkdir -p ASF/config
         cat > ASF/config/Thomasjr.json <<EOF
         {
+          "CustomGamePlayedWhileIdle": "Legit Farmer",
           "Enabled": true,
           "SteamLogin": "${{ secrets.STEAM_USERNAME1 }}",
           "SteamPassword": "${{ secrets.STEAM_PASSWORD1 }}",
-          "SteamGuardCode": "manual"
           "AutoSteamSaleEvent": true
         }
         EOF
