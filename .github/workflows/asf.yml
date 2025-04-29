@@ -4,7 +4,7 @@ on:
   workflow_dispatch:  # Allows for manual triggering
   schedule:
     - cron: '0 */6 * * *'  # Runs every 6 hours (can adjust as needed)
-
+    
 jobs:
   run-asf:
     runs-on: ubuntu-latest  # Choose the appropriate runner (ubuntu for Linux, windows-latest for Windows)
