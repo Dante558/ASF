@@ -34,7 +34,7 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: |
         wget https://github.com/JustArchiNET/ArchiSteamFarm/releases/latest/download/ASF-linux-x64.zip
-        unzip ASF.zip -d ASF
+        unzip ASF-linux-x64.zip -d ASF
 
     - name: Create Bot Configs from Secrets
       run: |
