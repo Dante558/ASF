@@ -52,4 +52,4 @@ jobs:
       run: |
         cd ASF  # Go to ASF directory
         ls -l  # List files to ensure ArchiSteamFarm.dll exists
-        dotnet ArchiSteamFarm.dll --no-restart
+        ./ArchiSteamFarm --no-restart
