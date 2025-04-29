@@ -44,6 +44,7 @@ jobs:
           "Enabled": true,
           "SteamLogin": "${{ secrets.STEAM_USERNAME1 }}",
           "SteamPassword": "${{ secrets.STEAM_PASSWORD1 }}",
+          "SteamGuardCode": "manual"
           "AutoSteamSaleEvent": true
         }
         EOF
