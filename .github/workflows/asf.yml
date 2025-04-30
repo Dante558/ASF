@@ -38,12 +38,20 @@ jobs:
 
     - name: Decode ASF .db file and place it in config folder
       run: |
-        mkdir -p ASF/config
-        echo "${{ secrets.JONBZOMBIE_DB_FILE }}" | base64 --decode > ASF/config/JONBZOMBIE.db  # Decode the base64 encoded .db file and save it
-        
-    - name: Decode ASF config.json from GitHub Secrets (Optional)
+        mkdir -p ASF/config  # Ensure the 'config' folder exists (this will not create the folder if it already exists)
+        echo "${{ secrets.JONBZOMBIE_DB_FILE }}" | base64 --decode > ASF/config/JONBZOMBIE.db  # Decode the base64 encoded .db file and save it in the 'config' folder
+
+    - name: Create config.json to enable the bot
       run: |
-        echo "{}" > ASF/config/config.json  # Optionally create a minimal or empty config.json file, so ASF can recognize the bot  
+        echo '{
+          "Bots": {
+            "JONBZOMBIE": {
+              "SteamLogin": "",
+              "SteamPassword": "",
+              "Enabled": true
+            }
+          }
+        }' > ASF/config/config.json  # Create config.json with the "Enabled": true flag  
         
     - name: Run ASF
       run: |
