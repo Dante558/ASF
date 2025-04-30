@@ -44,14 +44,11 @@ jobs:
     - name: Create config.json to enable the bot
       run: |
         echo '{
-          "Bots": {
-            "JONBZOMBIE": {
-              "SteamLogin": "",
-              "SteamPassword": "",
-              "Enabled": true
-            }
-          }
-        }' > ASF/config/config.json  # Create config.json with the "Enabled": true flag  
+  "CustomGamePlayedWhileIdle": "Legit Farmer",
+  "Enabled": true,
+  "FarmingPreferences": 128,
+  "HoursUntilCardDrops": 0,
+}' > ASF/config/config.json  # Create config.json with the "Enabled": true flag  
         
     - name: Run ASF
       run: |
