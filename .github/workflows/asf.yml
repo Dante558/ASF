@@ -1,7 +1,7 @@
 name: ASF Bot (5 Accounts)
 
 on:
-  workflow_dispatch:
+#  workflow_dispatch:
 #  schedule:
   #  - cron: '0 */6 * * *'  # Restart every 6 hours
 
