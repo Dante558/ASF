@@ -41,6 +41,10 @@ jobs:
         mkdir -p ASF/config
         echo "${{ secrets.JONBZOMBIE_DB_FILE }}" | base64 --decode > ASF/config/JONBZOMBIE.db  # Decode the base64 encoded .db file and save it
         
+    - name: Decode ASF config.json from GitHub Secrets (Optional)
+      run: |
+        echo "{}" > ASF/config/config.json  # Optionally create a minimal or empty config.json file, so ASF can recognize the bot  
+        
     - name: Run ASF
       run: |
         cd ASF  # Go to ASF directory
