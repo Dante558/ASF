@@ -32,11 +32,10 @@ jobs:
 
     - name: Decode ASF .db file and place it in config folder
       run: |
-        mkdir -p ASF/config  # Ensure the 'config' folder exists (this will not create the folder if it already exists)
         echo "${{ secrets.JONBZOMBIE_DB_FILE }}" | base64 --decode > ASF/config/JONBZOMBIE.db  # Decode the base64 encoded .db file and save it in the 'config' folder 
         
     - name: Run ASF
       run: |
         cd ASF  # Go to ASF directory
         ls -l  # List files to ensure ArchiSteamFarm.dll exists
-        ./ArchiSteamFarm --no-restart
+        ./ArchiSteamFarm --argument --otherOne
