@@ -32,7 +32,7 @@ jobs:
 
     - name: Decode ASF .db file and place it in config folder
       run: |
-        echo "${{ secrets.JONBZOMBIE_DB_FILE }}" | base64 --decode > ASF/config/JONBZOMBIE.db  # Decode the base64 encoded .db file and save it in the 'config' folder 
+        echo "${{ secrets.JONBZOMBIE_DB_FILE }}" | base64 --decode # Decode the base64 encoded .db file and save it in the 'config' folder 
         
     - name: Run ASF
       run: |
