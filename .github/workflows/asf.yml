@@ -1,9 +1,9 @@
 name: ASF Bot (5 Accounts)
 
 on:
-#  workflow_dispatch:
-#  schedule:
-  #  - cron: '0 */6 * * *'  # Restart every 6 hours
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'  # Restart every 6 hours
 
 jobs:
   run-asf:
@@ -36,17 +36,10 @@ jobs:
         wget https://github.com/JustArchiNET/ArchiSteamFarm/releases/latest/download/ASF-linux-x64.zip
         unzip ASF-linux-x64.zip -d ASF
 
-    - name: Create Bot Configs from Secrets
+    - name: Decode ASF .db file and place it in config folder
       run: |
         mkdir -p ASF/config
-        cat > ASF/config/JonBZombie.json <<EOF
-        {
-          "CustomGamePlayedWhileIdle": "Legit Farmer",
-          "Enabled": true,
-          "SteamLogin": "${{ secrets.STEAM_USERNAME1 }}",
-          "SteamPassword": "${{ secrets.STEAM_PASSWORD1 }}",
-          "AutoSteamSaleEvent": true
-        }
+        echo "${{ secrets.JONBZOMBIE_DB_FILE }}" | base64 --decode > ASF/config/JONBZOMBIE.db  # Decode the base64 encoded .db file and save it
         EOF
         
     - name: Run ASF
