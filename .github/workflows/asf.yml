@@ -39,7 +39,7 @@ jobs:
     - name: Create Bot Configs from Secrets
       run: |
         mkdir -p ASF/config
-        cat > ASF/config/Thomasjr.json <<EOF
+        cat > ASF/config/JonBZombie.json <<EOF
         {
           "CustomGamePlayedWhileIdle": "Legit Farmer",
           "Enabled": true,
