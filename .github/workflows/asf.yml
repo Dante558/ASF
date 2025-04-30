@@ -40,7 +40,6 @@ jobs:
       run: |
         mkdir -p ASF/config
         echo "${{ secrets.JONBZOMBIE_DB_FILE }}" | base64 --decode > ASF/config/JONBZOMBIE.db  # Decode the base64 encoded .db file and save it
-        EOF
         
     - name: Run ASF
       run: |
