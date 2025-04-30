@@ -39,4 +39,4 @@ jobs:
       run: |
         cd ASF  # Go to ASF directory
         ls -l  # List files to ensure ArchiSteamFarm.dll exists
-        ./ArchiSteamFarm --no-restart --loglevel Debug
+        ./ArchiSteamFarm --no-restart
