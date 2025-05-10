@@ -1,9 +1,9 @@
 name: ASF-translations
 
-on:
-  schedule:
-  - cron: '55 1 * * *'
-  workflow_dispatch:
+#on:
+  #schedule:
+  #- cron: '55 1 * * *'
+  #workflow_dispatch:
 
 permissions:
   contents: write
